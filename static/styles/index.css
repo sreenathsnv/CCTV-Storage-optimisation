@@ -1,0 +1,78 @@
+*
+{
+  padding:0;
+  margin:0;
+  
+}
+  body {
+      background-color: teal;
+  }
+  .navbar {
+    position: sticky;
+      background-color: rgba(250, 254, 125, 0.868);
+      display: flex;
+      justify-content: space-between;
+      padding: 20px;
+  }
+  .button {
+      display: block;
+      width: 17vw;
+      height: auto;
+      margin: 20px auto;
+      background-color: white;
+      text-align: center;
+      line-height: 50px;
+      color: black;
+      cursor:auto;
+      font-size: 1.5vw;
+      transition: 1s ;
+  }
+.signup
+{
+  margin-top: 40vh;
+  text-decoration:none;
+}
+.logo
+{
+  font-size:5vh;
+}
+a
+.buttons
+{
+  font-weight:bold;
+  font-size: 2vh;
+  border:None;
+  padding: 1vh;
+  border-radius:1vh;
+  background: #fff;
+  width:6vw;
+  transition: 1s linear;
+  margin:0vw 1vw 0vw 1vw;
+
+}
+.buttons:hover
+{
+    filter: opacity(.7);
+    color:#000;
+}
+.buttons:active
+{
+   transform: scale(.75);
+   filter: opacity(.9);
+}
+.loginbt
+{
+  background:#f5a850;
+  color:#fff;
+  
+}
+.button:hover
+{
+    filter: opacity(.8);
+    
+}
+.button:active
+{
+   transform: scale(.9);
+   filter: opacity(1);
+}

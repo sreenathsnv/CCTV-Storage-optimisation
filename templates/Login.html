@@ -1,0 +1,37 @@
+
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Login Page</title>
+  <link rel="stylesheet" href="{% static 'styles/login.css' %}">
+</head>
+<body>
+  <div class="login-form">
+    <div class="company-name">COMPANYNAME</div>
+    <div class="icon">🧪</div>
+    <form>
+      <input type="email" name="email" placeholder="johndoe@company.com" >
+      <input type="password" name="password" placeholder="Password" >
+      <input type="submit" value="Login">
+    </form>
+   
+  </div>
+  <button id ="goto-home" class="home-icon">
+    <img src="{% static 'images/home.png' %}" alt="" srcset="">
+  </button>
+
+  <script>
+
+    document.getElementById('goto-home').addEventListener('click',()=>{
+
+      window.location.href = "{% url 'home' %}"
+
+    })
+
+  </script>
+
+</body>
+</html>
+

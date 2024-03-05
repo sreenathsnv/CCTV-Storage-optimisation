@@ -1,0 +1,78 @@
+body, html {
+    margin: 0;
+}
+
+.navbar {
+        background-color: rgb(180, 110, 241);
+        display: flex;
+        justify-content: space-between;
+        padding: 20px;
+        
+        /* margin-bottom: 20vh; */
+    }
+    .btcont
+  {
+    display:flex;
+    flex-direction:row;
+    width:30vh;
+    justify-content:space-between;
+    width:6.5vw;
+  }
+
+#user-info {
+   float: right;
+  }
+  #admin
+  {
+    font-size: 1vw;
+    font-weight: 800;
+    color: rgb(255, 255, 255);
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  }
+  #home
+  {
+    background: transparent;
+    border: none;
+    color:#fff;
+    font-size: 1vw;
+    transition: 1s;
+  }
+  #home:active
+  {
+    transform: scale(.8);
+  }
+
+main {
+   display: flex;
+   flex-wrap: wrap;
+   padding: 20px;
+}
+
+.video-card {
+   border: 2px solid black;
+   width: calc(25% - 40px);
+   margin: 2vh;  
+   border-radius: 1.5vh;
+   transition: .5s;
+}
+
+.thumbnail {
+   width :100%;
+   height :150px; 
+}
+.details
+{
+    display: flex;
+    justify-content: space-between;
+    padding:1vh 1vh;
+}
+
+.video-card:hover
+{
+    
+    transform: scale(.9);
+}
+main:hover .video-card:not(:hover)
+{
+    filter: opacity(.8);
+}
