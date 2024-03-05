@@ -11,12 +11,16 @@
   <div class="login-form">
     <div class="company-name">COMPANYNAME</div>
     <div class="icon">🧪</div>
-    <form>
+    <form method="POST">
+      {% csrf_token %}
       <input type="email" name="email" placeholder="johndoe@company.com" >
       <input type="password" name="password" placeholder="Password" >
+      {% if page != "register"%}
       <input type="submit" value="Login">
+      {% else %}
+      <input type="submit" value="Register">
+      {% endif %}
     </form>
-   
   </div>
   <button id ="goto-home" class="home-icon">
     <img src="{% static 'images/home.png' %}" alt="" srcset="">
