@@ -11,7 +11,12 @@
     <div class="navbar">
         <div class = "logo">COMPANYNAME</div>
         <div>
+            {% if request.user.is_authenticated %}
+            <p>{{request.user.username}}</p>
+            {% else %}
             <button id = "Homebt" class = "buttons">Home</button> | <button  id = "login-button" class = "buttons loginbt">Login</button>
+            {% endif %}
+
         </div>
     </div>
     <button id="register-button"  class="button signup">Get Started →</button>

@@ -13,6 +13,24 @@ def home(request):
 
 def  loginUser(request):
 
+
+    if request.user.is_authenticated():
+            return redirect('home')
+    if request.method == 'POST':
+        email = request.POST.get('email').lower()
+        password = request.POST.get('password')
+
+        try:
+            user = CustomUser.objects.get(email = email)
+        except:
+            print("error")
+        user = authenticate(user,email = email,password = password)
+        if user is not None:
+            login(request,user)
+            context = {"username":user.username}
+            return redirect('home',context)
+
+
     return render(request,'Login.html')
 
 def  register(request):
@@ -22,9 +40,7 @@ def  register(request):
         if form.is_valid():
             user = form.save(commit=False)
             form.save()
-            print("user Registered",user.email)
-
-
-        return redirect('home')            
+            context = {"username":user.username}
+        return redirect('home',context)            
     context = {'page':page}
     return render(request,'Login.html',context)
