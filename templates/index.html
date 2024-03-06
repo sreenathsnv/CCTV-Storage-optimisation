@@ -12,33 +12,43 @@
         <div class = "logo">COMPANYNAME</div>
         <div>
             {% if request.user.is_authenticated %}
-            <p>{{request.user.username}}</p>
+            <span class="user" style="    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 2.5vh;
+            color: rgb(193 16 16);
+            font-weight: 600;">{{request.user.username}}</span>
+            <button  id = "logout" class = "buttons loginbt">Log Out</button> 
             {% else %}
             <button id = "Homebt" class = "buttons">Home</button> | <button  id = "login-button" class = "buttons loginbt">Login</button>
             {% endif %}
 
         </div>
     </div>
+    {% if request.user.is_authenticated %}
+    <button id="watch-videos"  class="button signup">See Videos →</button>
+    {% else %}
     <button id="register-button"  class="button signup">Get Started →</button>
-
-
+    {% endif %}
 
     <script>
-         document.addEventListener('DOMContentLoaded', function() {
-       
-        document.getElementById('Homebt').addEventListener('click', function() {
-            window.location.href = "{% url 'home' %}";
-        });
-
-       
-        document.getElementById('login-button').addEventListener('click', function() {
-            window.location.href = "{% url 'login' %}";
-        });
-        document.getElementById('register-button').addEventListener('click', function() {
-            window.location.href = "{% url 'register' %}";
-        });
-    });
-        </script>
+        var homeUrl = "{% url 'home' %}";
+        var logoutUrl = "{% url 'logout' %}";
+        var loginUrl = "{% url 'login' %}";
+        var registerUrl = "{% url 'register' %}";
+        if(document.getElementById('Homebt')){
+        document.getElementById('Homebt').addEventListener('click', function() {window.location.href = homeUrl;})
+        }
+        if(document.getElementById('logout')){
+            document.getElementById('logout').addEventListener('click', function() {window.location.href = logoutUrl;})
+        }
+        if(document.getElementById('login-button')){
+        document.getElementById('login-button').addEventListener('click', function() {window.location.href = loginUrl;})
+        }
+        if(document.getElementById('register-button')){
+        document.getElementById('register-button').addEventListener('click', function() {window.location.href = registerUrl;})
+        }
+    </script>
+    
+    
 
     </body>
 </html>

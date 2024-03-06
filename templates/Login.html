@@ -13,15 +13,23 @@
     <div class="icon">🧪</div>
     <form method="POST">
       {% csrf_token %}
+
+
       {% if page != "register"%}
+
       <input type="email" name="email" placeholder="johndoe@company.com" >
       <input type="password" name="password" placeholder="Password" >
       <input type="submit" value="Login">
+
       {% else %}
-      <input type="text" name="user" placeholder="johndoe"required>
+
+
+      <input type="text" name="username" placeholder="johndoe"required>
       <input type="email" name="email" placeholder="johndoe@company.com" required>
       <input type="password" name="password" placeholder="Password" required>
       <input type="submit" value="Register">
+
+
       {% endif %}
     </form>
   </div>

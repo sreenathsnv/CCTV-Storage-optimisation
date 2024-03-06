@@ -43,6 +43,11 @@
         <span class="admin">Admin</span>
     </div>
     <div class="content">
+
+        {% for user in users%}
+        <p>{{user.username}}</p>
+        {% endfor %}
+
         <button class="upload-btn">UPLOAD NOW ↑</button>
     </div>
 </body>

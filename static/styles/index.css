@@ -7,6 +7,12 @@
   body {
       background-color: teal;
   }
+.user {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 3vh;
+    color: rgb(51, 53, 49);
+    font-weight: 600;
+  }
   .navbar {
     position: sticky;
       background-color: rgba(250, 254, 125, 0.868);
@@ -26,6 +32,7 @@
       cursor:auto;
       font-size: 1.5vw;
       transition: 1s ;
+      
   }
 .signup
 {
@@ -36,7 +43,7 @@
 {
   font-size:5vh;
 }
-a
+
 .buttons
 {
   font-weight:bold;
@@ -48,6 +55,7 @@ a
   width:6vw;
   transition: 1s linear;
   margin:0vw 1vw 0vw 1vw;
+  text-decoration: none;
 
 }
 .buttons:hover
