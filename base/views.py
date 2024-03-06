@@ -59,8 +59,3 @@ def  register(request):
     context = {'page':page,"form":form}
     print("ruuning")
     return render(request,'Login.html',context)
-
-
-def listuser(request):
-    users = CustomUser.objects.all()
-    return render(request,'uploading.html',{"users":users})
