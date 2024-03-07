@@ -80,7 +80,14 @@ def adminPanel(request):
         return redirect('forbidden')
     
     return render(request,'admin.html')
-        
+
+def viewUser(request):
+    users = CustomUser.objects.all()
+
+    if not request.user.is_staff:
+        return redirect('forbidden')
+    context = {"users":users}
+    return render(request,'users.html',context)        
 
 @login_required(login_url='login')
 def manageFootage(request):
@@ -89,6 +96,16 @@ def manageFootage(request):
 @login_required(login_url='login')
 def deleteFootage(request,pk):
     pass
+
+
 @login_required(login_url='login')
 def deleteUser(request,pk):
-    pass
+    
+    user = CustomUser.objects.get(id = pk)
+    context = {"user":user}
+
+    if request.method == "POST":
+        user.delete()
+        return redirect('viewUser')
+
+    return render(request,'delete.html',context)

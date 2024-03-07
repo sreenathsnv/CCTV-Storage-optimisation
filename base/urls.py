@@ -1,6 +1,6 @@
 
 from django.urls import path,include
-from .views import home,loginUser,register,userLogout,watch,forbidden,adminPanel
+from .views import home,loginUser,register,userLogout,watch,forbidden,adminPanel,viewUser,deleteUser
 urlpatterns = [
     path('',home,name = 'home'),
     
@@ -13,6 +13,8 @@ urlpatterns = [
     path('forbidden/',forbidden,name = 'forbidden'),
 
     path('admin-panel/',adminPanel,name = 'adminPanel'),
+    path('view-user/',viewUser,name = 'viewUser'),
+    path('delete-user/<int:pk>',deleteUser,name = 'deleteUser'),
 
     
 ]
