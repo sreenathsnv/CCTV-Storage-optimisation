@@ -61,7 +61,7 @@ def  register(request):
     return render(request,'Login.html',context)
 
 
-
+@login_required(login_url='login')
 def watch(request):
     #footages = 
     context = {}
@@ -70,15 +70,22 @@ def watch(request):
 def forbidden(request):
         return render(request,'forbidden.html')
 
+
+
+@login_required(login_url='login')
 def adminPanel(request):
     if request.user.is_staff:
         pass
     else:
         return redirect('forbidden')
 
+@login_required(login_url='login')
 def manageFootage(request):
     pass
+
+@login_required(login_url='login')
 def deleteFootage(request,pk):
     pass
+@login_required(login_url='login')
 def deleteUser(request,pk):
     pass
