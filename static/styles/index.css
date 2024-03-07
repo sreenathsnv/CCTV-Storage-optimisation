@@ -5,7 +5,7 @@
   
 }
   body {
-      background-color: teal;
+      background-color: #f8dbe4;
   }
 .user {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -15,7 +15,7 @@
   }
   .navbar {
     position: sticky;
-      background-color: rgba(250, 254, 125, 0.868);
+      background-color: rgba(121, 121, 121, 0.868);
       display: flex;
       justify-content: space-between;
       padding: 20px;
