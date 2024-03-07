@@ -67,14 +67,14 @@ def watch(request):
     context = {}
     return render(request,'footages.html',context)
 
-# def forbidden(request):
-#         return render(request,'forbidden.html')
+def forbidden(request):
+        return render(request,'forbidden.html')
 
 def adminPanel(request):
     if request.user.is_staff:
         pass
     else:
-        return redirect('')
+        return redirect('forbidden')
 
 def manageFootage(request):
     pass
