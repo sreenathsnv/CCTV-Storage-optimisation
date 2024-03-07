@@ -30,6 +30,7 @@ def  loginUser(request):
         try:
             user = CustomUser.objects.get(email = email)
         except:
+            return redirect('home')
             print("error")
         user = authenticate(request,username = email,password = password)
         if user is not None:
@@ -57,5 +58,27 @@ def  register(request):
         return redirect('home')
                     
     context = {'page':page,"form":form}
-    print("ruuning")
     return render(request,'Login.html',context)
+
+
+
+def watch(request):
+    #footages = 
+    context = {}
+    return render(request,'footages.html',context)
+
+# def forbidden(request):
+#         return render(request,'forbidden.html')
+
+def adminPanel(request):
+    if request.user.is_staff:
+        pass
+    else:
+        return redirect('')
+
+def manageFootage(request):
+    pass
+def deleteFootage(request,pk):
+    pass
+def deleteUser(request,pk):
+    pass

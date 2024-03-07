@@ -34,6 +34,7 @@
         var logoutUrl = "{% url 'logout' %}";
         var loginUrl = "{% url 'login' %}";
         var registerUrl = "{% url 'register' %}";
+        var watchUrl = "{% url 'watch' %}"
         if(document.getElementById('Homebt')){
         document.getElementById('Homebt').addEventListener('click', function() {window.location.href = homeUrl;})
         }
@@ -46,6 +47,11 @@
         if(document.getElementById('register-button')){
         document.getElementById('register-button').addEventListener('click', function() {window.location.href = registerUrl;})
         }
+
+        if(document.getElementById('watch-videos')){
+        document.getElementById('watch-videos').addEventListener('click', function() {window.location.href = watchUrl;})
+        }
+
     </script>
     
     
