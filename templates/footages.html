@@ -20,49 +20,20 @@
     </div>
 
 <main>
+    {% for vid in footages %}
     <div class="video-card">
-        <div class="thumbnail"></div>
+        <video width="100%" class="thumbnail" controls>
+            <source src="{{ vid.footage.url }}" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <!-- <div class="thumbnail">
+        </div> -->
         <div class="details">
-            <p>Date: 12/02/2016</p>
-            <p> Video: 123321</p>
+            <p>Date: {{vid.timestamp}}</p>
+            <p> Video: footage_{{vid.timestamp}}</p>
         </div>
     </div>
-   
-    <div class="video-card">
-        <div class="thumbnail"></div>
-        <div class="details">
-            <p>Date: 12/02/2016</p>
-            <p> Video: 123321</p>
-        </div>
-    </div>
-    <div class="video-card">
-        <div class="thumbnail"></div>
-        <div class="details">
-            <p>Date: 12/02/2016</p>
-            <p> Video: 123321</p>
-        </div>
-    </div>
-    <div class="video-card">
-        <div class="thumbnail"></div>
-        <div class="details">
-            <p>Date: 12/02/2016</p>
-            <p> Video: 123321</p>
-        </div>
-    </div>
-    <div class="video-card">
-        <div class="thumbnail"></div>
-        <div class="details">
-            <p>Date: 12/02/2016</p>
-            <p> Video: 123321</p>
-        </div>
-    </div>
-    <div class="video-card">
-        <div class="thumbnail"></div>
-        <div class="details">
-            <p>Date: 12/02/2016</p>
-            <p> Video: 123321</p>
-        </div>
-    </div>
+    {% endfor %}
     
 </main>
 <script>

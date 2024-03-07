@@ -3,7 +3,7 @@ from django.contrib.auth import logout,login,authenticate
 from django.contrib.auth.decorators import login_required
 from django.http import HttpResponse
 from .forms import CustomUserForm
-from .models import CustomUser
+from .models import CustomUser,Footages
 
 
 # Create your views here.
@@ -65,8 +65,8 @@ def  register(request):
 
 @login_required(login_url='login')
 def watch(request):
-    #footages = 
-    context = {}
+    footages = Footages.objects.filter(user = request.user)
+    context = {"footages":footages}
     return render(request,'footages.html',context)
 
 def forbidden(request):

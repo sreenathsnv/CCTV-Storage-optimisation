@@ -29,7 +29,7 @@ class CustomUser(AbstractUser):
 class Footages(models.Model):
 
     thumbnail = models.ImageField(default= "images/thumbnail.png" )
-    footage =  models.FileField()
+    footage =  models.FileField(upload_to="uploads/%d-%m-%y")
     timestamp = models.DateField(auto_now = True)
 
     user = models.ForeignKey(CustomUser,on_delete = models.CASCADE)
