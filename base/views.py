@@ -35,7 +35,9 @@ def  loginUser(request):
         user = authenticate(request,username = email,password = password)
         if user is not None:
             login(request,user)
-            
+            if user.is_staff:
+                return render(request,'admin.html')
+                
             return redirect('home')
         else:
             print("user is None")
@@ -74,10 +76,11 @@ def forbidden(request):
 
 @login_required(login_url='login')
 def adminPanel(request):
-    if request.user.is_staff:
-        pass
-    else:
+    if not request.user.is_staff:
         return redirect('forbidden')
+    
+    return render(request,'admin.html')
+        
 
 @login_required(login_url='login')
 def manageFootage(request):

@@ -1,10 +1,10 @@
-
+{% load static %}
 <!DOCTYPE html>
 <html>
 <head>
   <title>Admin Panel</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <link rel="stylesheet" href="../CSS/admin.css">
+  <link rel="stylesheet" href="{% static 'styles/admin.css' %}">
 </head>
 <body>
     <div class="navbar">
@@ -16,10 +16,14 @@
     </div>
 
     <div class="buttons">
-    <a href="#" class="button">Review</a>
-    <a href="#" class="button">Manage</a>
-    <a href="#" class="button">View User</a>
+    <a href="#" id = "manage-vids" class="button">Manage</a>
+    <a href="#" id= "view-user" class="button">View User</a>
     </div>
+    <script>
+      if(document.getElementById('home')){
+        document.getElementById('home').addEventListener('click', function() {window.location.href = "{% url 'home' %}";})
+        }
+    </script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/js/all.min.js" integrity="sha512-GWzVrcGlo0TxTRvz9ttioyYJ+Wwk9Ck0G81D+eO63BaqHaJ3YZX9wuqjwgfcV/MrB2PhaVX9DkYVhbFpStnqpQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </body>
 </html>
