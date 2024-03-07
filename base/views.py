@@ -4,6 +4,8 @@ from django.contrib.auth.decorators import login_required
 from django.http import HttpResponse
 from .forms import CustomUserForm
 from .models import CustomUser,Footages
+from django.contrib import messages
+
 
 
 # Create your views here.
@@ -30,7 +32,7 @@ def  loginUser(request):
         try:
             user = CustomUser.objects.get(email = email)
         except:
-            return redirect('home')
+            messages.add_message(request, messages.ERROR, "No User Available")
             print("error")
         user = authenticate(request,username = email,password = password)
         if user is not None:
@@ -39,8 +41,7 @@ def  loginUser(request):
                 return render(request,'admin.html')
                 
             return redirect('home')
-        else:
-            print("user is None")
+        
 
 
     return render(request,'Login.html')
