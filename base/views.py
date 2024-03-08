@@ -50,6 +50,10 @@ def  loginUser(request):
     return render(request,'Login.html')
 
 def  register(request):
+
+    if request.user.is_authenticated:
+            return redirect('home')
+
     form = CustomUserForm()
     page = "register"
     if request.method == "POST":

@@ -135,4 +135,4 @@ MEDIA_URL = "/media/"
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 #After 3 days the user will be logged out
-# SESSION_COOKIE_AGE = 180
+SESSION_COOKIE_AGE = 86400
