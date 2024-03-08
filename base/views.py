@@ -94,6 +94,8 @@ def viewUser(request):
 
 @login_required(login_url='login')
 def manageFootage(request):
+    if not request.user.is_staff:
+        return redirect('forbidden')
     users = CustomUser.objects.all()
     footages = None
     if request.method == "GET":
@@ -104,11 +106,16 @@ def manageFootage(request):
     context = {"users":users,"footages":footages}
     return render(request,'footages.html',context)
 
+
 @login_required(login_url='login')
-
-
 def deleteFootage(request,pk):
-    pass
+    footage = Footages.objects.get(id = pk)
+    if not request.user.is_staff:
+        return redirect('forbidden')
+    if request.method == "POST":
+        footage.delete()
+        return redirect('manageFootage')
+    return render(request,'delete.html')
 
 
 @login_required(login_url='login')

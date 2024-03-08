@@ -1,6 +1,6 @@
 
 from django.urls import path,include
-from .views import home,loginUser,register,userLogout,watch,forbidden,adminPanel,viewUser,deleteUser,manageFootage
+from .views import home,loginUser,register,userLogout,watch,forbidden,adminPanel,viewUser,deleteUser,manageFootage,deleteFootage
 urlpatterns = [
     path('',home,name = 'home'),
     
@@ -16,6 +16,7 @@ urlpatterns = [
     path('view-user/',viewUser,name = 'viewUser'),
     path('delete-user/<int:pk>',deleteUser,name = 'deleteUser'),
     path('manage-videos',manageFootage,name = 'manageFootage'),
+    path('delete-video/<int:pk>',deleteFootage,name = 'deleteFootage'),
 
 
     

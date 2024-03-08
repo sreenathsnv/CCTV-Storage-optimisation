@@ -33,7 +33,11 @@
         </div>
     </div>
     {% if request.user.is_authenticated %}
+    {% if request.user.is_staff %}
+    <button id="dashboard-button"  class="button signup">Dashboard →</button>
+    {% else %}
     <button id="watch-videos"  class="button signup">See Videos →</button>
+    {% endif %}
     {% else %}
     <button id="register-button"  class="button signup">Get Started →</button>
     {% endif %}
@@ -45,6 +49,7 @@
         var loginUrl = "{% url 'login' %}";
         var registerUrl = "{% url 'register' %}";
         var watchUrl = "{% url 'watch' %}"
+        var dashboardUrl = "{% url 'adminPanel' %}"
         if(document.getElementById('Homebt')){
         document.getElementById('Homebt').addEventListener('click', function() {window.location.href = homeUrl;})
         }
@@ -56,6 +61,10 @@
         }
         if(document.getElementById('register-button')){
         document.getElementById('register-button').addEventListener('click', function() {window.location.href = registerUrl;})
+        }
+
+        if(document.getElementById('dashboard-button')){
+        document.getElementById('dashboard-button').addEventListener('click', function() {window.location.href = dashboardUrl;})
         }
 
         if(document.getElementById('watch-videos')){
