@@ -52,7 +52,7 @@ def  loginUser(request):
 def  register(request):
 
     if request.user.is_authenticated:
-            return redirect('home')
+        return redirect('home')
 
     form = CustomUserForm()
     page = "register"
