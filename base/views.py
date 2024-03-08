@@ -66,9 +66,11 @@ def  register(request):
 
 @login_required(login_url='login')
 def watch(request):
+
     footages = Footages.objects.filter(user = request.user)
     context = {"footages":footages}
     return render(request,'footages.html',context)
+
 
 def forbidden(request):
         return render(request,'forbidden.html')
@@ -92,9 +94,19 @@ def viewUser(request):
 
 @login_required(login_url='login')
 def manageFootage(request):
-    pass
+    users = CustomUser.objects.all()
+    footages = None
+    if request.method == "GET":
+        user_id = request.GET.get('user')
+        print(user_id)
+        if user_id:
+            footages = Footages.objects.filter(user_id=user_id)
+    context = {"users":users,"footages":footages}
+    return render(request,'footages.html',context)
 
 @login_required(login_url='login')
+
+
 def deleteFootage(request,pk):
     pass
 

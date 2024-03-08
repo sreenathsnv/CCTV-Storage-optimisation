@@ -10,21 +10,32 @@ body, html {
         
         /* margin-bottom: 20vh; */
     }
+.delete-icon {
+      position: absolute;
+      top: 1vh;
+      right: -4vh;
+      color: red;
+      font-size: 3vh;
+  }
+
     .btcont
   {
     display:flex;
     flex-direction:row;
-    width:30vh;
-    justify-content:space-between;
-    width:6.5vw;
+    margin-right: 5vh;
+    justify-content:space-around;
+    width:20.5vw;
   }
 
 #user-info {
    float: right;
+   
   }
   #admin
   {
     font-size: 1vw;
+    margin-top: 2vh;
+    margin-left: 3vh;
     font-weight: 800;
     color: rgb(255, 255, 255);
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
@@ -51,7 +62,7 @@ main {
 .video-card {
    border: 2px solid black;
    width: calc(25% - 40px);
-   margin: 2vh;  
+   margin: 4vh;  
    border-radius: 1.5vh;
    transition: .5s;
 }
@@ -75,4 +86,68 @@ main {
 main:hover .video-card:not(:hover)
 {
     filter: opacity(.8);
+}
+
+.dropdown {
+ 
+  display: flex;
+  flex-direction: row;
+  width: 13vh;
+  height: 4vh;
+  margin-top: 1.5vh;
+  
+  margin-right:20vh ;
+  
+}
+
+.dropdown select {
+  appearance: none;
+  padding-left: 2vh;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #fff;
+  cursor: pointer;
+  margin-right: 1vh;
+  width: 19vh; 
+}
+
+.dropdown select::-ms-expand {
+  display: none;
+}
+
+.dropdown::after {
+  content: '\25BC';
+  position: absolute;
+  top: 58%;
+  right: -38px;
+  transform: translateY(-50%);
+}
+form
+{
+  display: flex;
+
+}
+/* Styling the options */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  z-index: 1;
+  width: 100%; /* Adjust width as needed */
+}
+
+.dropdown-content a {
+  display: block;
+  padding: 10px;
+  text-decoration: none;
+  color: #333;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown-content a:hover {
+  background-color: #f9f9f9;
 }

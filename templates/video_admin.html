@@ -44,57 +44,19 @@
         <h1>COMPANYNAME</h1>
         <p>Admin</p>
     </div>
-    <div class="grid-container">
-        <div class="grid-item">
-          <div class = "thumb"></div>
-            <p class="delete-icon"><i class="fa-solid fa-trash-can"></i></p>
-            <p>Date: 12/02/2016 Video_123321</p>
-        </div>
-        <div class="grid-item">
-          <div class = "thumb"></div>
-            <p class="delete-icon"><i class="fa-solid fa-trash-can"></i></p>
-            <p>Date: 12/02/2016 Video_123321</p>
-        </div>
-         <div class="grid-item">
-          <div class = "thumb"></div>
-            <p class="delete-icon"><i class="fa-solid fa-trash-can"></i></p>
-            <p>Date: 12/02/2016 Video_123321</p>
-        </div>
-         <div class="grid-item">
-          <div class = "thumb"></div>
-            <p class="delete-icon"><i class="fa-solid fa-trash-can"></i></p>
-            <p>Date: 12/02/2016 Video_123321</p>
-        </div>
-         <div class="grid-item">
-          <div class = "thumb"></div>
-            <p class="delete-icon"><i class="fa-solid fa-trash-can"></i></p>
-            <p>Date: 12/02/2016 Video_123321</p>
-        </div>
-         <div class="grid-item">
-          <div class = "thumb"></div>
-            <p class="delete-icon"><i class="fa-solid fa-trash-can"></i></p>
-            <p>Date: 12/02/2016 Video_123321</p>
-        </div>
-         <div class="grid-item">
-          <div class = "thumb"></div>
-            <p class="delete-icon"><i class="fa-solid fa-trash-can"></i></p>
-            <p>Date: 12/02/2016 Video_123321</p>
-        </div>
-          <div class="grid-item">
-          <div class = "thumb"></div>
-            <p class="delete-icon"><i class="fa-solid fa-trash-can"></i></p>
-            <p>Date: 12/02/2016 Video_123321</p>
-        </div>
-         <div class="grid-item">
-          <div class = "thumb"></div>
-            <p class="delete-icon"><i class="fa-solid fa-trash-can"></i></p>
-            <p>Date: 12/02/2016 Video_123321</p>
-        </div>
-         <div class="grid-item">
-          <div class = "thumb"></div>
-            <p class="delete-icon"><i class="fa-solid fa-trash-can"></i></p>
-            <p>Date: 12/02/2016 Video_123321</p>
-        </div>
+    <div class="video-card">
+      <video width="100%" class="thumbnail" controls>
+          <source src="{{ vid.footage.url }}" type="video/mp4">
+          Your browser does not support the video tag.
+      </video>
+      <!-- <div class="thumbnail">
+      </div> -->
+      <div class="details">
+          <p>Date: {{vid.timestamp}}</p>
+          <p> Video: footage_{{vid.timestamp}}</p>
+      </div>
+  </div>
+        
          <div class="grid-item">
           <div class = "thumb"></div>
             <p class="delete-icon"><i class="fa-solid fa-trash-can"></i></p>
