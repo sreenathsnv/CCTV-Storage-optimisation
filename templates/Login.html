@@ -9,35 +9,38 @@
   <link rel="stylesheet" href="{% static 'styles/login.css' %}">
 </head>
 <body>
-  {% if messages %}
-    {% for message in messages %}
-    <div class="alert alert-danger" role="alert" style="height: fit-content;">
-      {{ message }}
-    </div>
+  
+ 
     
-    {% endfor %}
-  {% endif %}
   <div class="login-form">
-    <div class="company-name">COMPANYNAME</div>
-    <div class="icon">🧪</div>
+    <div class="company-name">We-Watch</div>
+    <div class="icon">📹</div>
+    {% if messages %}
+      {% for message in messages %}
+           <p style="color: red;font-size: 1.5vh;">
+                {{ message }}
+            </p>
+       {% endfor %}
+    {% endif %}
     <form method="POST">
+      
       {% csrf_token %}
 
 
       {% if page != "register"%}
 
-      <input type="email" name="email" placeholder="johndoe@company.com" >
-      <input type="password" name="password" placeholder="Password" >
+      <input type="email" name="email" placeholder="johndoe@company.com" required>
+      <input type="password" name="password" placeholder="Password" required>
       <input type="submit" value="Login">
-
+      <a id ="l-r-button" href="{% url 'register' %}">Don't have an account </a>
       {% else %}
-
-
+      
+    
       <input type="text" name="username" placeholder="johndoe"required>
       <input type="email" name="email" placeholder="johndoe@company.com" required>
       <input type="password" name="password" placeholder="Password" required>
       <input type="submit" value="Register">
-
+      <a id ="l-r-button" href="{% url 'login' %}">Already have an account</a>
 
       {% endif %}
     </form>

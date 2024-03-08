@@ -73,4 +73,10 @@ body {
     height: 5vh;
     color:aliceblue
   }
+  #l-r-button
+  {
+    font-size: 2vh;
+    color: black;
+    margin-left: 7vw;
+  }
   

@@ -1,7 +1,6 @@
 from django.shortcuts import render,redirect
 from django.contrib.auth import logout,login,authenticate
 from django.contrib.auth.decorators import login_required
-from django.http import HttpResponse
 from .forms import CustomUserForm
 from .models import CustomUser,Footages
 from django.contrib import messages
@@ -31,9 +30,12 @@ def  loginUser(request):
 
         try:
             user = CustomUser.objects.get(email = email)
-        except:
-            messages.add_message(request, messages.ERROR, "No User Available")
-            print("error")
+        except CustomUser.DoesNotExist:
+            
+            messages.error(request, 'No user available.Register')
+            return render(request,'Login.html')
+            
+
         user = authenticate(request,username = email,password = password)
         if user is not None:
             login(request,user)
@@ -41,9 +43,10 @@ def  loginUser(request):
                 return render(request,'admin.html')
                 
             return redirect('home')
-        
-
-
+        else:
+            messages.error(request, 'Invalid username or password')
+            return render(request,'Login.html')
+            
     return render(request,'Login.html')
 
 def  register(request):
@@ -120,6 +123,8 @@ def deleteFootage(request,pk):
 
 @login_required(login_url='login')
 def deleteUser(request,pk):
+    if not request.user.is_staff:
+        return redirect('forbidden')
     
     user = CustomUser.objects.get(id = pk)
     context = {"user":user}
