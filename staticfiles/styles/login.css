@@ -1,0 +1,82 @@
+body {
+    background-color: #ded5de;
+    color: white;
+    font-family: Arial, sans-serif;
+  }
+  .login-form {
+    margin: auto;
+    margin-top: 20vh;
+    width: 400px;
+    padding: 20px;
+    background-color: #e7f4cd;
+    border: 2px solid #00bfff;
+    border-radius: 5px;
+  }
+  .company-name {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: coral;
+    margin-bottom: 2vh;
+  }
+  .icon {
+    display: block;
+    margin: auto;
+    margin-bottom: 5vh;
+    margin-top: 2vh;
+    width: 50px;
+    height: 50px;
+    background-color: rgb(70, 1, 113);
+    border-radius: 50%;
+    text-align: center;
+    line-height: 50px;
+    font-size: 24px;
+    color: white;
+  }
+  input[type="email"], input[type="password"], input[type = "text" ]{
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    border: none;
+    background-color: #eafff5;
+    color: rgb(24, 23, 23);
+  }
+  input[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    background-color: rgb(2, 104, 111);
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    margin-bottom: 2vh;
+  }
+  .forgot-password {
+    color: #bfbfbf;
+    font-size: 14px;
+    text-align: right;
+  }
+  .home-icon {
+    position: absolute;
+    top: 5vh;
+    right: 6vw;
+    font-size: 24px;
+    border: none;
+    background: transparent;
+  }
+
+  .home-icon img{
+
+    width:5vh;
+    height: 5vh;
+    color:aliceblue
+  }
+  #l-r-button
+  {
+    font-size: 2vh;
+    color: black;
+    margin-left: 7vw;
+  }
+  
