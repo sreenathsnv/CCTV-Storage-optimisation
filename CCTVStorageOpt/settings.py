@@ -24,7 +24,7 @@ SECRET_KEY = 'django-insecure-^b0wcb^=kb0+i7^llr(e!f#lv20&d)-=nm35-7zah7m*ydd^)y
 # SECURITY WARNING: don't run with debug turned on in production!
 # pip install whitenoise
 
-DEBUG = False
+DEBUG = True
 # ALLOWED_HOSTS = []
 ALLOWED_HOSTS = ['127.0.0.1','localhost','[::1]']
 
@@ -39,13 +39,20 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
+    'rest_framework',
+    'rest_framework.authtoken',
+    
     'base.apps.BaseConfig',
 
 ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+
     'whitenoise.middleware.WhiteNoiseMiddleware',#Debug = True
+    'corsheaders.middleware.CorsMiddleware',
+
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -90,6 +97,9 @@ DATABASES = {
         'PASSWORD':'',
         'HOST': 'localhost',
         'PORT':'3306',
+        'OPTIONS': {
+            'init_command': "SET sql_mode='STRICT_TRANS_TABLES'",
+        },
     }
 }
 
@@ -146,3 +156,4 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 #After 3 days the user will be logged out
 SESSION_COOKIE_AGE = 86400
+CORS_ORIGIN_ALLOW_ALL = True

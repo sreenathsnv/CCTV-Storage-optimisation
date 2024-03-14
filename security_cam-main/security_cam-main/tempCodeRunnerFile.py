@@ -1,0 +1,1 @@
+create_folder(f"./outputs/output{datetime.datetime.now().strftime('%d-%m-%Y')}")
