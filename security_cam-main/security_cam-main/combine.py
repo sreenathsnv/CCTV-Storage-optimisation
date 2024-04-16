@@ -32,7 +32,7 @@ def combine_videos(folder_path, output_path,compression_codec='libx264', crf=23)
     final_clip.close()
 
     # Compress the video using FFmpeg
-    subprocess.run(['ffmpeg', '-y','-i', output_path, '-c:v', compression_codec, '-crf', str(crf), '-preset', 'medium', 'compressed_output.mp4'])
+    subprocess.run(['ffmpeg', '-y','-i', output_path, '-c:v', compression_codec, '-crf', str(crf), '-preset', 'medium', f"./outputs/output{datetime.datetime.now().strftime('%d-%m-%Y')}/output_combined_video{datetime.datetime.now().strftime('%d-%m-%Y')}.MP4"])
 
 
 if __name__ == '__main__':

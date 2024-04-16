@@ -144,7 +144,7 @@ class Connect:
 
         create_folder(f"./outputs/output{datetime.datetime.now().strftime('%d-%m-%Y')}")
 
-        OUTPUT_PATH = f"./outputs/output{datetime.datetime.now().strftime('%d-%m-%Y')}/output_combined_video{datetime.datetime.now().strftime('%d-%m-%Y')}.avi"
+        OUTPUT_PATH = f"./outputs/output{datetime.datetime.now().strftime('%d-%m-%Y')}/output_combined_video{datetime.datetime.now().strftime('%d-%m-%Y')}.MP4"
 
         print("combined started")
         combine_videos(FOLDER_PATH, OUTPUT_PATH)
