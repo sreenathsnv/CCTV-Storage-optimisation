@@ -1,10 +1,10 @@
 import datetime
 import cv2
-import winsound
+import torch
 import time
 import os
 
-def cam_Model():
+def cam_Model_with_yolo():
     current_date = datetime.date.today()
 
     # Format the current date as "dd-mm-yyyy"
@@ -12,6 +12,9 @@ def cam_Model():
     save_folder = f"./recordings/recordings{time.strftime('%d-%m-%Y')}"
     if not os.path.exists(save_folder):
         os.makedirs(save_folder)
+
+    # Load YOLOv5 model (pre-trained on COCO dataset)
+    model = torch.hub.load('ultralytics/yolov5', 'yolov5s')
 
     cam = cv2.VideoCapture(0)
     fourcc = cv2.VideoWriter_fourcc(*'XVID')
@@ -32,6 +35,7 @@ def cam_Model():
         
         motion_detected = False
         
+        # Motion detection logic
         for c in contours:
             if cv2.contourArea(c) < 5000:
                 continue
@@ -44,6 +48,14 @@ def cam_Model():
                 start_time = time.time()
                 out = cv2.VideoWriter(os.path.join(save_folder, f'record_{start_time}.avi'), fourcc, 20.0, (frame1.shape[1], frame1.shape[0]))
         
+        # Object detection using YOLOv5
+        results = model(frame1)
+        for *xyxy, conf, cls in results.xyxy[0]:  # Bounding boxes, confidence, and class index
+            x1, y1, x2, y2 = map(int, xyxy)  # Convert to integers
+            label = f"{model.names[int(cls)]} {conf:.2f}"  # Class name and confidence
+            cv2.rectangle(frame1, (x1, y1), (x2, y2), (0, 0, 255), 2)  # Draw bounding box
+            cv2.putText(frame1, label, (x1, y1 - 10), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0, 0, 255), 2)
+
         if recording:
             out.write(frame1)
         
@@ -54,10 +66,10 @@ def cam_Model():
         if cv2.waitKey(10) == ord('q'):
             break
         
-        cv2.imshow('CCTV oncapturing...', frame1)
+        cv2.imshow('CCTV with YOLOv5 Object Detection', frame1)
 
     cam.release()
     cv2.destroyAllWindows()
 
-if __name__ == "main":
-    cam_Model()
+if __name__ == "__main__":
+    cam_Model_with_yolo()
