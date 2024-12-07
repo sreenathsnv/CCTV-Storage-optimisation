@@ -1,6 +1,6 @@
 # WeWatch : Optimizing CCTV Storage with Redundant Frame Removal and Object Detection
 
-![Project Banner](snapshots\home.png)
+![Project Banner](snapshots/home.png)
 
 ## Project Overview
 Today, the use of CCTV systems is widespread for security and surveillance. However, one significant challenge is the enormous storage space required to store continuous footage, much of which is redundant and unnecessary. Traditional methods often lead to high costs and inefficient storage.
@@ -111,7 +111,8 @@ python manage.py runserver
 cd security_cam-main/security_cam-main
 python loginpage.py
 ```
-![Desktop login](snapshots\desklogin.png)
+![Desktop login](snapshots/desklogin.png)
+
 ## Features
 
 ### Advanced Video Surveillance
@@ -149,28 +150,28 @@ python loginpage.py
 ![Login Page](snapshots/login.png)
 
 ### User-Home
-![User Home](snapshots\userhome.png)
+![User Home](snapshots/userhome.png)
 
 ### Connection
-![Connection](snapshots\connectionWindow.png)
+![Connection](snapshots/connectionWindow.png)
 
 ### Camera Monitoring
-![Camera View](snapshots\recording.png)
+![Camera View](snapshots/recording.png)
 
 ### File upload
-![Connection](snapshots\connectionWindow.png)
+![Connection](snapshots/connectionWindow.png)
 
 ### Video gallery -user 
-![Video gallery -user ](snapshots\videogallery.png)
+![Video gallery -user ](snapshots/videogallery.png)
 
 ### admin dashboard
-![admin dashboard](snapshots\admindashboard.png)
+![admin dashboard](snapshots/admindashboard.png)
 
 ### user list
-![user list](snapshots\userlist.png)
+![user list](snapshots/userlist.png)
 
 ### user videos
-![user videos](snapshots\userVideos.png)
+![user videos](snapshots/userVideos.png)
 
 ## Troubleshooting
 
@@ -200,6 +201,6 @@ Distributed under the MIT License. See `LICENSE` for more information.
 
 ## Contact
 
-Your Name - sreenathsnvaltpb@gmail.com
+Sreenath V - sreenathsnvaltpb@gmail.com
 
 Project Link: [https://github.com/sreenathsnv/CCTV-Storage-optimisation]
