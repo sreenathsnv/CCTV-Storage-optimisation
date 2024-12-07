@@ -159,7 +159,7 @@ python loginpage.py
 ![Camera View](snapshots/recording.png)
 
 ### File upload
-![Connection](snapshots/connectionWindow.png)
+![Connection](snapshots/fileuploadwithfolder.png)
 
 ### Video gallery -user 
 ![Video gallery -user ](snapshots/videogallery.png)
