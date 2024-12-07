@@ -77,7 +77,8 @@ security-camera-project/
 ├── manage.py              # Django management script
 └── requirements.txt       # Python package dependencies
 ```
-
+## Architecture
+![Desktop login](snapshots/cctv.jpg)
 ## Setup and Configuration
 
 ### Database Migration
