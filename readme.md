@@ -146,7 +146,7 @@ python loginpage.py
 ## Screenshots
 
 ### Web Interface
-![Login Page](snapshots\login.png)
+![Login Page](snapshots/login.png)
 
 ### User-Home
 ![User Home](snapshots\userhome.png)
